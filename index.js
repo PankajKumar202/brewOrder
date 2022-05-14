@@ -116,7 +116,7 @@ app.post("/callback", (req, res) => {
            console.log('S2S Response: ', response, "\n");
            var _results = JSON.parse(response);
            /* where it will come back after payment*/
-           res.redirect(`/viewOrders?status=${_results.STATUS}&ORDERID=${_results.ORDERID}&date=${_results.TXNDATE}&bank=${_results.BANKNAME}`)
+           res.redirect(`https://brewmusefspk.netlify.app/viewOrders?status=${_results.STATUS}&ORDERID=${_results.ORDERID}&date=${_results.TXNDATE}&bank=${_results.BANKNAME}`)
            });
        });
 
