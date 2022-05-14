@@ -39,7 +39,7 @@ if(!paymentDetails.amount || !paymentDetails.customerId || !paymentDetails.custo
     params['CUST_ID'] = paymentDetails.customerId;
     params['TXN_AMOUNT'] = paymentDetails.amount;
     /* where is app is hosted (heroku url)*/
-    params['CALLBACK_URL'] = 'https://brewdeliver.herokuapp.com/callback';
+    params['CALLBACK_URL'] = 'https://brewmusefspk.netlify.app/callback';
     params['EMAIL'] = paymentDetails.customerEmail;
     params['MOBILE_NO'] = paymentDetails.customerPhone;
   
@@ -116,7 +116,7 @@ app.post("/callback", (req, res) => {
            console.log('S2S Response: ', response, "\n");
            var _results = JSON.parse(response);
            /* where it will come back after payment*/
-           res.redirect(`brewdeliver.herokuapp.com/viewOrders?status=${_results.STATUS}&ORDERID=${_results.ORDERID}&date=${_results.TXNDATE}&bank=${_results.BANKNAME}`)
+           res.redirect(`/viewOrders?status=${_results.STATUS}&ORDERID=${_results.ORDERID}&date=${_results.TXNDATE}&bank=${_results.BANKNAME}`)
            });
        });
 
